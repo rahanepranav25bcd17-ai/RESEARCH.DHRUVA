@@ -1,9 +1,4 @@
-import streamlit as st
-import pandas as pd
-try:
-    from st_gsheets_connection import GSheetsConnection
-except ImportError:
-    st.error("GSheets Library not found. Please check requirements.txt")
+
 import streamlit as st
 import pandas as pd
 
@@ -156,5 +151,6 @@ if access_code == "classified":
                             except: st.error("Database error.")
 
 st.markdown("<div style='text-align:center; color:#333; font-size:12px; padding:40px;'>© 2026 D.H.R.U.V.A. | LOGIC OVER FEAR</div>", unsafe_allow_html=True)
+
 
 
