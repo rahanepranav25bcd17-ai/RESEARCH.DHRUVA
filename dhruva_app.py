@@ -4,8 +4,16 @@ try:
     from st_gsheets_connection import GSheetsConnection
 except ImportError:
     st.error("GSheets Library not found. Please check requirements.txt")
+import streamlit as st
+import pandas as pd
 
- # 1. PAGE CONFIG
+# सुरक्षित इम्पोर्ट (Safe Import)
+try:
+    from streamlit_gsheets import GSheetsConnection
+except ImportError:
+    st.error("GSheets Library not found. Please ensure 'st-gsheets-connection' is in requirements.txt")
+
+# 1. PAGE CONFIG
 st.set_page_config(
     page_title="D.H.R.U.V.A. | National Anomaly Research",
     page_icon="🦅",
@@ -148,4 +156,5 @@ if access_code == "classified":
                             except: st.error("Database error.")
 
 st.markdown("<div style='text-align:center; color:#333; font-size:12px; padding:40px;'>© 2026 D.H.R.U.V.A. | LOGIC OVER FEAR</div>", unsafe_allow_html=True)
+
 
